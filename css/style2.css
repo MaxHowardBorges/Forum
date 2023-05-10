@@ -1,0 +1,73 @@
+/* Centrer tous les éléments dans le main */
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  /* Positionner l'image à gauche et le texte à droite dans le Qui sommes-nous */
+  #Présentation {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  #Présentation img {
+    margin-right: 20px;
+    width: 300px;
+    height: auto;
+  }
+  
+  /* Positionner l'image à droite et le texte à gauche dans le Mot du Président */
+  #Mot {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  #Mot img {
+    margin-left: 20px;
+    width: 300px;
+    height: auto;
+  }
+  
+  /* Styliser le sommaire des activités */
+  #Activites {
+    font-weight: bold;
+    margin-top: 50px;
+  }
+  
+  #Activites ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  #Activites li {
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 5px;
+    width: 250px;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  #Activites h3 {
+    font-size: 1.2em;
+    margin: 0;
+  }
+  
+  #Activites p {
+    font-size: 0.8em;
+    margin: 0;
+    flex-grow: 1;
+  }
+  
