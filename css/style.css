@@ -33,7 +33,7 @@ header {
   z-index: 999;
 }
 #logo {
-  height: 85px;
+  height: 100px;
   cursor: pointer;
 }
 h1 {
@@ -48,6 +48,9 @@ header .right {
   float: right;
   position: absolute;
   right: 0;
+  width: 1220px;
+  display: flex;
+  justify-content: space-evenly;
 }
 header .center,
 footer .center {
