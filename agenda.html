@@ -36,7 +36,139 @@
         </div>
       </nav>
     </header>
-    <main></main>
+    <main>
+      <script>
+        var currentMonth = new Date().getMonth();
+        var currentYear = new Date().getFullYear();
+
+        function previousMonth() {
+          currentMonth--;
+          if (currentMonth < 0) {
+            currentMonth = 11;
+            currentYear--;
+          }
+          updateCalendar();
+        }
+
+        function nextMonth() {
+          currentMonth++;
+          if (currentMonth > 11) {
+            currentMonth = 0;
+            currentYear++;
+          }
+          updateCalendar();
+        }
+
+        function updateCalendar() {
+          var monthNames = [
+            "Janvier",
+            "Février",
+            "Mars",
+            "Avril",
+            "Mai",
+            "Juin",
+            "Juillet",
+            "Août",
+            "Septembre",
+            "Octobre",
+            "Novembre",
+            "Décembre",
+          ];
+          var jours = ["Lu", "Ma", "Me", "Je", "Ve", "Sa", "Di"];
+          var monthDays = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+          var today = new Date();
+          var thisDay = today.getDate();
+          var year = currentYear;
+
+          if ((year % 4 == 0 && year % 100 != 0) || year % 400 == 0) {
+            monthDays[1] = 29;
+          }
+
+          var nDays = monthDays[currentMonth];
+          var firstDay = new Date(year, currentMonth, 0);
+          var startDay = firstDay.getDay();
+
+          var tb = document.createElement("table");
+
+          var tbr = tb.insertRow(-1);
+
+          var tbh = document.createElement("th");
+          tbh.setAttribute("colspan", "5");
+          var tbhtxt = document.createTextNode(
+            monthNames[currentMonth] + " " + year
+          );
+          tbh.appendChild(tbhtxt);
+
+          var before = document.createElement("th");
+          before.setAttribute("class", "onclick");
+          var beforetxt = document.createTextNode("<");
+          before.appendChild(beforetxt);
+          before.addEventListener("click", previousMonth);
+
+          tbr.appendChild(before);
+          tbr.appendChild(tbh);
+
+          var after = document.createElement("th");
+          after.setAttribute("class", "onclick");
+          var aftertxt = document.createTextNode(">");
+          after.appendChild(aftertxt);
+          after.addEventListener("click", nextMonth);
+
+          tbr.appendChild(after);
+
+          var tbr = tb.insertRow(-1);
+
+          for (var i = 0; i < jours.length; i++) {
+            tbr.insertCell(-1).appendChild(document.createTextNode(jours[i]));
+          }
+
+          var tbr = document.createElement("tr");
+
+          var column = 0;
+
+          for (var i = 0; i < startDay; i++) {
+            tbr.insertCell(0);
+            column++;
+          }
+
+          for (var i = 1; i <= nDays; i++) {
+            var tdd = tbr.insertCell(-1);
+
+            if (currentMonth === new Date().getMonth()) {
+              i === thisDay ? (tdd.style.color = "#FF0000") : null;
+            }
+
+            tdd.appendChild(document.createTextNode(i));
+
+            column++;
+            if (column === 7) {
+              tb.appendChild(tbr);
+              var tbr = document.createElement("tr");
+              column = 0;
+            }
+
+            i === nDays ? tb.appendChild(tbr) : null;
+          }
+
+          // Remove the old calendar
+          var oldCalendar = document.getElementById("calendar");
+          if (oldCalendar) {
+            oldCalendar.parentNode.removeChild(oldCalendar);
+          }
+
+          // Append the new calendar
+          var contCalendar = document.getElementById("contcalendar");
+          contCalendar.appendChild(tb);
+          tb.setAttribute("id", "calendar");
+        }
+
+        typeof window.addEventListener === "undefined"
+          ? window.attachEvent("onload", updateCalendar)
+          : addEventListener("load", updateCalendar, false);
+      </script>
+
+      <div id="contcalendar"></div>
+    </main>
     <footer>
       <div class="bottomnav">
         <div class="left"></div>

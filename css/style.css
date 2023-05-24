@@ -271,3 +271,6 @@ p {
   align-items: center;
   margin-top: 75px;
 }
+.onclick {
+  cursor: pointer;
+}
