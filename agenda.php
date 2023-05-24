@@ -28,7 +28,6 @@ while ($row = mysqli_fetch_assoc($query)) {
         <div class="dropdown">
           <a href="index.html">Accueil</a>
           <div class="dropdown-content">
-            <a href="index.html#Présentation">À propos</a>
             <a href="index.html#Mot">Mot</a>
             <a href="index.html#Activites">Activites</a>
           </div>
@@ -38,7 +37,7 @@ while ($row = mysqli_fetch_assoc($query)) {
         <a href="annuaire.html">Annuaire</a>
         <a href="rencontres.html">Rencontres</a>
         <a href="lesExperts.html">Les Experts</a>
-        <a class="active" href="agenda.html">Agenda</a>
+        <a class="active" href="agenda.php">Agenda</a>
         <a href="infos.html">Infos</a>
       </div>
     </nav>
