@@ -4,11 +4,11 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/form.css" />
     <link rel="stylesheet" href="/css/style.css" />
-    <title>
-      Collège des experts - Association Forum de Grasse - Alpes maritimes
-    </title>
+    <title>Association Forum de Grasse - Alpes maritimes</title>
   </head>
+
   <body>
     <header>
       <nav class="topnav">
@@ -23,27 +23,59 @@
           <div class="dropdown">
             <a href="index.html">Accueil</a>
             <div class="dropdown-content">
-              <a href="index.html#Mot">Mot</a>
-              <a href="index.html#Activites">Activites</a>
+              <a href="#Mot">Mot</a>
+              <a href="#Activites">Activites</a>
             </div>
           </div>
           <a href="quiSommesNous.html">Qui Sommes Nous</a>
           <a href="journéeForum.html">Journée Forum</a>
           <a href="annuaire.html">Annuaire</a>
           <a href="rencontres.html">Rencontres</a>
-          <a class="active" href="lesExperts.html">Les Experts</a>
+          <a href="lesExperts.html">Les Experts</a>
           <a href="agenda.php">Agenda</a>
           <a href="infos.html">Infos</a>
         </div>
       </nav>
     </header>
-    <main></main>
+    <main>
+      <div class="div-form">
+        <form class="form">
+          <p class="title">Nous contacter</p>
+          <label>
+            <input required="" placeholder="" type="name" class="input" />
+            <span>Nom</span>
+          </label>
+
+          <label>
+            <input required="" placeholder="" type="email" class="input" />
+            <span>Email</span>
+          </label>
+          <label>
+            <input required="" placeholder="" type="objet" class="input" />
+            <span>Objet du message</span>
+          </label>
+          <label>
+            <textarea
+              data-field-required="true"
+              name="message"
+              class="input"
+            ></textarea>
+          </label>
+          <button>
+            Envoyer
+            <div class="arrow-wrapper">
+              <div class="arrow"></div>
+            </div>
+          </button>
+        </form>
+      </div>
+    </main>
     <footer>
       <div class="bottomnav">
         <div class="left"></div>
         <div class="center">
           <a href="partenaires.html">Partenaires</a>
-          <a href="contacter.html">Contacter</a>
+          <a class="active" href="contacter.html">Contacter</a>
         </div>
         <div class="right"></div>
       </div>

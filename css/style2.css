@@ -4,6 +4,10 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+main {
+  display: flex;
+  flex-direction: column;
+}
 
 .topnav {
   background-color: #6e3535;
@@ -32,7 +36,7 @@ header {
   left: 0;
   top: 0;
   position: sticky;
-    z-index: 999;
+  z-index: 999;
 }
 #logo {
   height: 100px;
@@ -80,7 +84,7 @@ footer .center {
   display: block;
 }
 
-. dropdown:hover .dropdown-content {
+.dropdown:hover .dropdown-content {
   display: block;
   animation: 1s forwards;
 }
@@ -146,6 +150,13 @@ main {
   margin-right: 200px;
 }
 
+.div2 {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  margin-top: 75px;
+}
 
 .divtexte {
   width: 600px;
@@ -153,6 +164,12 @@ main {
 
 .img {
   width: 1000px;
+}
+
+.div3 {
+  clear: left;
+  clear: right;
+  margin-top: 75px;
 }
 
 p {
@@ -274,13 +291,13 @@ p {
   flex-wrap: nowrap;
   align-items: center;
   margin-top: 75px;
-  }
-
+  position: relative;
+}
 
 .card {
-  position: relative;
+  position: absolute;
   height: 450px;
-  width: 150%;
+  width: 100%;
   max-width: 950px;
   margin: auto;
   background-color: #ffffff;
@@ -299,7 +316,7 @@ p {
 
 #slideImg:checked ~ .inner_part {
   padding: 0;
-  transition: .1s ease-in;
+  transition: 0.1s ease-in;
 }
 
 .inner_part .img {
@@ -308,28 +325,29 @@ p {
   overflow: hidden;
   flex-shrink: 0;
   border-radius: 20px;
-  box-shadow: 0 10px 50px rgba(0,0,0,0.2);
+  box-shadow: 0 10px 50px rgba(0, 0, 0, 0.2);
 }
 
 #slideImg:checked ~ .inner_part .img {
   height: 350px;
   width: 850px;
   z-index: 99;
-  transition: .3s .2s ease-in;
+  transition: 0.3s 0.2s ease-in;
 }
 
 .inner_part .img img {
   height: 100%;
   width: 100%;
+  cursor: pointer;
   opacity: 0;
-  transition: .6s;
+  transition: 0.6s;
 }
 
 #slide_1:checked ~ .inner_part .img_1,
 #slide_2:checked ~ .inner_part .img_2,
 #slide_3:checked ~ .inner_part .img_3 {
   opacity: 1;
-  transition-delay: .2s;
+  transition-delay: 0.2s;
 }
 
 .content {
@@ -337,7 +355,7 @@ p {
   width: 530px;
   margin-left: 50px;
   opacity: 0;
-  transition: .6s;
+  transition: 0.6s;
 }
 
 #slideImg:checked ~ .inner_part .content {
@@ -350,7 +368,7 @@ p {
   opacity: 1;
   margin-left: 0;
   z-index: 100;
-  transition-delay: .3s;
+  transition-delay: 0.3s;
 }
 
 .content .title {
@@ -410,10 +428,9 @@ p {
   cursor: pointer;
 }
 
-
 .slider .slide:before {
-  position: relative;
-  content: '';
+  position: absolute;
+  content: "";
   top: 0;
   left: 0;
   height: 100%;
@@ -421,7 +438,7 @@ p {
   background: #000000;
   border-radius: 10px;
   transform: scaleX(0);
-  transition: transform .6s;
+  transition: transform 0.6s;
   transform-origin: left;
 }
 
@@ -434,7 +451,4 @@ p {
 
 input {
   display: none;
-}
-news{
-  position: relative;
 }
