@@ -4,11 +4,6 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-main{
-  display: flex;
-  flex-direction: column;
-}
-
 
 .topnav {
   background-color: #6e3535;
@@ -37,7 +32,7 @@ header {
   left: 0;
   top: 0;
   position: sticky;
-  z-index: 999;
+    z-index: 999;
 }
 #logo {
   height: 100px;
@@ -151,13 +146,6 @@ main {
   margin-right: 200px;
 }
 
-.div2 {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  align-items: center;
-  margin-top: 75px;
-}
 
 .divtexte {
   width: 600px;
@@ -165,12 +153,6 @@ main {
 
 .img {
   width: 1000px;
-}
-
-.div3 {
-  clear: left;
-  clear: right;
-  margin-top: 75px;
 }
 
 p {
@@ -292,14 +274,13 @@ p {
   flex-wrap: nowrap;
   align-items: center;
   margin-top: 75px;
-  position: relative;
-}
+  }
 
 
 .card {
-  position: absolute;
+  position: relative;
   height: 450px;
-  width: 100%;
+  width: 150%;
   max-width: 950px;
   margin: auto;
   background-color: #ffffff;
@@ -340,7 +321,6 @@ p {
 .inner_part .img img {
   height: 100%;
   width: 100%;
-  cursor: pointer;
   opacity: 0;
   transition: .6s;
 }
@@ -432,7 +412,7 @@ p {
 
 
 .slider .slide:before {
-  position: absolute;
+  position: relative;
   content: '';
   top: 0;
   left: 0;
@@ -454,4 +434,7 @@ p {
 
 input {
   display: none;
+}
+news{
+  position: relative;
 }
