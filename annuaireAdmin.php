@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/css/style3.css" />
+    <link rel="stylesheet" href="/css/annuaire.css" />
     <title>Annuaire - Association Forum de Grasse - Alpes maritimes</title>
 </head>
 
@@ -36,47 +36,39 @@
     <div id="diapo"></div>
     <main>
         <h1>Annuaire des associations</h1>
+
+        <button id="ajouter">AJOUTER ASSOCIATION</button>
+
         <div class="cat">
-            <div class="categorie">
-                <a href="index.php"><img src="assets/img/forum_categorieartsetculture.jpg" />
+
+            <div class="categorie"><a href="index.php"><img src="assets/img/forum_categorieartsetculture.jpg" />
                     <h3>Art & Culture</h3>
-                </a>
-            </div>
-            <div class="categorie">
-                <a href="index.php"><img src="assets/img/forum_categoriehumanitairesocial.jpg" />
+                </a></div>
+            <div class="categorie"><a href="index.php"><img src="assets/img/forum_categoriehumanitairesocial.jpg" />
                     <h3>Humanitaire, lien sociale et Civique</h3>
-                </a>
-            </div>
-            <div class="categorie">
-                <a href="index.php"><img src="assets/img/forum_categoriesport.jpg" />
+                </a></div>
+            <div class="categorie"><a href="index.php"><img src="assets/img/forum_categoriesport.jpg" />
                     <h3>Sport</h3>
-                </a>
-            </div>
-            <div class="categorie">
-                <a href="index.php"><img src="assets/img/forum_categorieloisirs.jpg" />
+                </a></div>
+            <div class="categorie"><a href="index.php"><img src="assets/img/forum_categorieloisirs.jpg" />
                     <h3>Animations, Loisirs et Jeunesse</h3>
-                </a>
-            </div>
-            <div class="categorie">
-                <a href="index.php"><img src="assets/img/forum_categoriebienetre.jpg" />
+                </a></div>
+            <div class="categorie"><a href="index.php"><img src="assets/img/forum_categoriebienetre.jpg" />
                     <h3>Bien-être</h3>
-                </a>
-            </div>
-            <div class="categorie">
-                <a href="index.php"><img src="assets/img/avatar.jpg" />
+                </a></div>
+            <div class="categorie"><a href="index.php"><img src="assets/img/avatar.jpg" />
                     <h3>Écologie & environnement</h3>
-                </a>
-            </div>
-            <div class="categorie">
-                <a href="index.php"><img src="assets/img/avatar.jpg" />
+                </a></div>
+            <div class="categorie"><a href="index.php"><img src="assets/img/avatar.jpg" />
                     <h3>Anciens combattants et assimilés</h3>
-                </a>
-            </div>
-            <div class="categorie">
-                <a href="index.php"><img src="assets/img/avatar.jpg" />
+                </a></div>
+            <div class="categorie"><a href="index.php"><img src="assets/img/avatar.jpg" />
                     <h3>Économie et développement</h3>
-                </a>
-            </div>
+                </a></div>
+            <div class="categorie"><a href="index.php"><img src="assets/img/addIcon.png" />
+                    <h3>Ajouter Catégorie</h3>
+                </a></div>
+
         </div>
     </main>
     <footer>

@@ -13,7 +13,7 @@ if (isset($_SESSION['idAdministrateur']) && !empty($_SESSION['idAdministrateur']
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="/css/style3.css" />
+  <link rel="stylesheet" href="/css/annuaire.css" />
   <title>Annuaire - Association Forum de Grasse - Alpes maritimes</title>
 </head>
 

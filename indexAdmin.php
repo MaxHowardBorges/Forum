@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/css/style2.css" />
+    <link rel="stylesheet" href="/css/index.css" />
     <title>Association Forum de Grasse - Alpes maritimes</title>
 </head>
 
@@ -39,7 +39,9 @@
             <div class="div4">
                 <div class="img">
                     <img src="assets/img/avatar.jpg" width="700px" />
+                    <button class="ajouter">MODIFIER</button>
                     <img src="assets/img/forum_journeeforum2.JPG" width="700px" />
+                    <button class="ajouter">MODIFIER</button>
                 </div>
                 <div class="divtexte">
                     <h2 id="Mot">Le mot du Président</h2>
@@ -91,6 +93,7 @@
                     </p>
                     <p>Georges BRUNETTI <br />Président de Forum</p>
                 </div>
+                <button class="ajouter">MODIFIER</button>
             </div>
         </div>
 

@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/quiSommesNous.css" />
     <title>
         Qui Sommes Nous - Association Forum de Grasse - Alpes maritimes
     </title>
@@ -15,23 +15,23 @@
     <header>
         <nav class="topnav">
             <div class="left">
-                <img id="logo" src="/assets/img/forum_logo.png" onclick="window.location.href = 'index.php'" />
+                <img id="logo" src="/assets/img/forum_logo.png" onclick="window.location.href = 'index.html'" />
             </div>
             <div class="right">
                 <div class="dropdown">
-                    <a href="index.php">Accueil</a>
+                    <a href="index.html">Accueil</a>
                     <div class="dropdown-content">
-                        <a href="index.php#Mot">Mot</a>
-                        <a href="index.php#Activites">Activites</a>
+                        <a href="index.html#Mot">Mot</a>
+                        <a href="index.html#Activites">Activites</a>
                     </div>
                 </div>
-                <a class="active" href="quiSommesNous.php">Qui Sommes Nous</a>
-                <a href="journéeForum.php">Journée Forum</a>
-                <a href="annuaire.php">Annuaire</a>
-                <a href="rencontres.php">Rencontres</a>
-                <a href="lesExperts.php">Les Experts</a>
+                <a class="active" href="quiSommesNous.html">Qui Sommes Nous</a>
+                <a href="journéeForum.html">Journée Forum</a>
+                <a href="annuaire.html">Annuaire</a>
+                <a href="rencontres.html">Rencontres</a>
+                <a href="lesExperts.html">Les Experts</a>
                 <a href="agenda.php">Agenda</a>
-                <a href="infos.php">Infos</a>
+                <a href="infos.html">Infos</a>
             </div>
         </nav>
     </header>
@@ -50,10 +50,12 @@
             L'activité de ces associations devant s'exercer sur la commune de Grasse
             ou sur des communes du Pays de Grasse.
         </p>
+        <button class="ajouter">MODIFIER</button>
         <div class="container reveal fade-right">
             <div class="div2">
                 <div class="img">
                     <img src="assets/img/forum_journeeforum1.JPG" width="700px" />
+                    <button class="ajouter">MODIFIER</button>
                 </div>
                 <div class="divtexte">
                     <p>
@@ -74,6 +76,7 @@
                         nombre d'organisations représentatives dépassait 150, Pour plus de
                         300 membres. <br />
                     </p>
+                    <button class="ajouter">MODIFIER</button>
                 </div>
             </div>
         </div>
@@ -94,6 +97,7 @@
                 aussi de grandes manifestations culturelles, récréatives et
                 humanitaires pour fédérer les associations entre elles.
             </p>
+            <button class="ajouter">MODIFIER</button>
         </div>
         <h3>Une équipe au service des associations</h3>
         <div class="aaa">
@@ -133,6 +137,7 @@
             </div>
         </div>
         <br />
+        <button class="ajouter">MODIFIER</button>
     </main>
     <footer>
         <div class="bottomnav">
