@@ -1,3 +1,13 @@
+<?php
+if (session_status() != PHP_SESSION_ACTIVE) {
+    session_save_path('/var/www/sessions/');
+    session_start();
+}
+if (!isset($_SESSION['idAdministrateur']) || empty($_SESSION['idAdministrateur'])) {
+    header("Location: connexion.html");
+    exit();
+}
+?>
 <!DOCTYPE html>
 <html lang="fr">
 
