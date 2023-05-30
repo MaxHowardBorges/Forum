@@ -1,4 +1,12 @@
 <?php
+session_save_path('/var/www/sessions/');
+session_start();
+if (isset($_SESSION['idAdministrateur']) && !empty($_SESSION['idAdministrateur'])) {
+  include('agendaAdmin.php');
+  exit();
+}
+?>
+<?php
 require_once 'dbConnect.php';
 $db = createDbConnection();
 $query = mysqli_query($db, "SELECT * FROM evenement;");
@@ -22,23 +30,23 @@ while ($row = mysqli_fetch_assoc($query)) {
   <header>
     <nav class="topnav">
       <div class="left">
-        <img id="logo" src="/assets/img/forum_logo.png" onclick="window.location.href = 'index.html'" />
+        <img id="logo" src="/assets/img/forum_logo.png" onclick="window.location.href = 'index.php'" />
       </div>
       <div class="right">
         <div class="dropdown">
-          <a href="index.html">Accueil</a>
+          <a href="index.php">Accueil</a>
           <div class="dropdown-content">
-            <a href="index.html#Mot">Mot</a>
-            <a href="index.html#Activites">Activites</a>
+            <a href="index.php#Mot">Mot</a>
+            <a href="index.php#Activites">Activites</a>
           </div>
         </div>
-        <a href="quiSommesNous.html">Qui Sommes Nous</a>
-        <a href="journéeForum.html">Journée Forum</a>
-        <a href="annuaire.html">Annuaire</a>
-        <a href="rencontres.html">Rencontres</a>
-        <a href="lesExperts.html">Les Experts</a>
+        <a href="quiSommesNous.php">Qui Sommes Nous</a>
+        <a href="journéeForum.php">Journée Forum</a>
+        <a href="annuaire.php">Annuaire</a>
+        <a href="rencontres.php">Rencontres</a>
+        <a href="lesExperts.php">Les Experts</a>
         <a class="active" href="agenda.php">Agenda</a>
-        <a href="infos.html">Infos</a>
+        <a href="infos.php">Infos</a>
       </div>
     </nav>
   </header>
@@ -189,6 +197,7 @@ while ($row = mysqli_fetch_assoc($query)) {
       <div class="center">
         <a href="partenaires.html">Partenaires</a>
         <a href="contacter.html">Contacter</a>
+        <a href="connexion.html">Connexion</a>
       </div>
       <div class="right"></div>
     </div>
