@@ -22,10 +22,10 @@ body {
     font-size: 20px;
 }
 
-
 .topnav a:hover {
     color: white;
 }
+
 .topnav a.active {
     color: white;
 }

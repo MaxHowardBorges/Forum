@@ -452,3 +452,33 @@ p {
 input {
   display: none;
 }
+
+.ajouter {
+  padding: 17px 40px;
+  border-radius: 50px;
+  border: 0;
+  background-color: #f6f6f6;
+  box-shadow: #f2a341 0 0 8px;
+  letter-spacing: 1.5px;
+  font-size: 15px;
+  font-family: Arial, Helvetica, sans-serif;
+  transition: all .5s ease;
+  cursor: pointer;
+}
+
+.ajouter:hover {
+  letter-spacing: 3px;
+  background-color: hsl(33, 87%, 60%);
+  color: hsl(0, 0%, 100%);
+}
+
+.ajouter:active {
+  letter-spacing: 3px;
+  background-color: hsl(33, 87%, 60%);
+  color: hsl(0, 0%, 100%);
+  transform: translateY(10px);
+  transition: 0.5s;
+}
+
+
+
