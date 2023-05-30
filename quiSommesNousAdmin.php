@@ -15,23 +15,23 @@
     <header>
         <nav class="topnav">
             <div class="left">
-                <img id="logo" src="/assets/img/forum_logo.png" onclick="window.location.href = 'index.html'" />
+                <img id="logo" src="/assets/img/forum_logo.png" onclick="window.location.href = 'index.php'" />
             </div>
             <div class="right">
                 <div class="dropdown">
-                    <a href="index.html">Accueil</a>
+                    <a href="index.php">Accueil</a>
                     <div class="dropdown-content">
-                        <a href="index.html#Mot">Mot</a>
-                        <a href="index.html#Activites">Activites</a>
+                        <a href="index.php#Mot">Mot</a>
+                        <a href="index.php#Activites">Activites</a>
                     </div>
                 </div>
-                <a class="active" href="quiSommesNous.html">Qui Sommes Nous</a>
-                <a href="journéeForum.html">Journée Forum</a>
-                <a href="annuaire.html">Annuaire</a>
-                <a href="rencontres.html">Rencontres</a>
-                <a href="lesExperts.html">Les Experts</a>
+                <a class="active" href="quiSommesNous.php">Qui Sommes Nous</a>
+                <a href="journéeForum.php">Journée Forum</a>
+                <a href="annuaire.php">Annuaire</a>
+                <a href="rencontres.php">Rencontres</a>
+                <a href="lesExperts.php">Les Experts</a>
                 <a href="agenda.php">Agenda</a>
-                <a href="infos.html">Infos</a>
+                <a href="infos.php">Infos</a>
             </div>
         </nav>
     </header>
