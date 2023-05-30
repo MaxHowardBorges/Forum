@@ -274,3 +274,14 @@ p {
 .onclick {
   cursor: pointer;
 }
+div#contcalendar {
+  display: flex;
+  justify-content: center;
+}
+td {
+  padding: 50px;
+  border: solid 1px;
+}
+table#calendar {
+  margin: 30px;
+}
