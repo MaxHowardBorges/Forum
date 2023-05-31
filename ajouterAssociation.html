@@ -37,15 +37,27 @@
   </header>
   <body>
     <div class="div-form">
-      <form class="form" action="index.php">
+      <form class="form" action="ajouterAssociation.php" method="post">
         <p class="title">Ajouter une nouvelle association</p>
         <label>
-          <input required="" placeholder="" type="title" class="input" />
+          <input
+            required=""
+            placeholder=""
+            type="title"
+            class="input"
+            name="nomAssociation"
+          />
           <span>Nom de l'association</span>
         </label>
 
         <label>
-          <input required="" placeholder="" type="text" class="input" />
+          <input
+            required=""
+            placeholder=""
+            type="text"
+            class="input"
+            name="themes"
+          />
           <span>Themes</span>
         </label>
 
@@ -53,14 +65,24 @@
           >Sélectionner une catégorie d'association :</label
         >
         <select id="categorieInput" name="categorieInput" class="input">
-          <option value="sport">Art & Culture</option>
-          <option value="musique">Humanitaire, lien sociale et Civique</option>
-          <option value="lecture">Sport</option>
-          <option value="lecture">Animations, Loisirs et Jeunesse</option>
-          <option value="lecture">Bien-être</option>
-          <option value="lecture">Écologie & environnement</option>
-          <option value="lecture">Anciens combattants et assimilés</option>
-          <option value="lecture">Économie et développement</option>
+          <option value="Art & Culture">Art & Culture</option>
+          <option value="Humanitaire, lien sociale et Civique">
+            Humanitaire, lien sociale et Civique
+          </option>
+          <option value="Sport">Sport</option>
+          <option value="Animations, Loisirs et Jeunesse">
+            Animations, Loisirs et Jeunesse
+          </option>
+          <option value="Bien-être">Bien-être</option>
+          <option value="Écologie & environnement">
+            Écologie & environnement
+          </option>
+          <option value="Anciens combattants et assimilés">
+            Anciens combattants et assimilés
+          </option>
+          <option value="Économie et développement">
+            Économie et développement
+          </option>
 
           <!-- Ajoutez d'autres options selon vos besoins -->
         </select>
@@ -74,7 +96,6 @@
           ></textarea>
         </label>
 
-        <!-- TODO : modifier pour que ce soit un input type submit -->
         <button type="submit">
           Ajouter
           <div class="arrow-wrapper">

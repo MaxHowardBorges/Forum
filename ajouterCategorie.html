@@ -36,13 +36,14 @@
     </nav>
   </header>
   <body>
-  <div class="cat">
-  <div class="categorie">
-    <a href="index.php"><img src="assets/img/avatar.jpg" />
-      <h3>Économie et développement</h3>
-    </a>
-  </div>
-  </div>
+    <div class="cat">
+      <div class="categorie">
+        <a href="index.php"
+          ><img src="assets/img/avatar.jpg" />
+          <h3>Économie et développement</h3>
+        </a>
+      </div>
+    </div>
     <div class="div-form">
       <form class="form" action="index.php">
         <p class="title">Ajouter une nouvelle catégorie</p>
@@ -57,7 +58,8 @@
         </label>
 
         <label class="l1">
-          <input id="couleurInput"
+          <input
+            id="couleurInput"
             required=""
             placeholder=""
             type="color"
@@ -69,16 +71,15 @@
 
         <label class="l1">
           <input
-                  id="couleurInput2"
-                  required=""
-                  placeholder=""
-                  type="color"
-                  class="input"
-                  style="width: 375px; margin-bottom: 30px"
+            id="couleurInput2"
+            required=""
+            placeholder=""
+            type="color"
+            class="input"
+            style="width: 375px; margin-bottom: 30px"
           />
           <span>Couleur</span>
         </label>
-        <!-- TODO : modifier pour que ce soit un input type submit -->
         <button type="submit">
           Ajouter
           <div class="arrow-wrapper">
@@ -99,21 +100,23 @@
       <div class="right"></div>
     </div>
   </footer>
-<script>// Récupérer l'élément input par son identifiant
-var inputCouleur = document.getElementById("couleurInput");
+  <script>
+    // Récupérer l'élément input par son identifiant
+    var inputCouleur = document.getElementById("couleurInput");
 
-// Récupérer l'élément carré par son identifiant
-var carré = document.getElementById("carré");
+    // Récupérer l'élément carré par son identifiant
+    var carré = document.getElementById("carré");
 
-// Fonction pour mettre à jour la couleur du carré
-function mettreÀJourCouleur() {
-  var couleurChoisie = inputCouleur.value;
-  carré.style.backgroundColor = couleurChoisie;
-}
+    // Fonction pour mettre à jour la couleur du carré
+    function mettreÀJourCouleur() {
+      var couleurChoisie = inputCouleur.value;
+      carré.style.backgroundColor = couleurChoisie;
+    }
 
-// Écouter les changements de la valeur du champ de couleur
-inputCouleur.addEventListener("change", mettreÀJourCouleur);
+    // Écouter les changements de la valeur du champ de couleur
+    inputCouleur.addEventListener("change", mettreÀJourCouleur);
 
-// Mettre à jour la couleur du carré lors du chargement initial de la page
-mettreÀJourCouleur();</script>
+    // Mettre à jour la couleur du carré lors du chargement initial de la page
+    mettreÀJourCouleur();
+  </script>
 </html>
