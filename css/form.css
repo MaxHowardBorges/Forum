@@ -206,9 +206,6 @@ select#typeInput {
 }
 
 
-
-
-
 .cat{
   display: flex;
   flex-wrap: wrap;
@@ -247,24 +244,6 @@ select#typeInput {
   transition: all 0.5s cubic-bezier(0.23, 1, 0.320, 1);
 }
 
-.content {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 20px;
-  color: #e8e8e8;
-  transition: all 0.5s cubic-bezier(0.23, 1, 0.320, 1);
-}
-
-.content .heading {
-  font-weight: 700;
-  font-size: 32px;
-}
-
-.content .para {
-  line-height: 1.5;
-}
-
 .categorie::before {
   content: "";
   position: absolute;
@@ -290,12 +269,14 @@ select#typeInput {
   align-content: center;
   justify-content: center;
   display: flex;
+  margin-top: 40px;
+  margin-bottom: 10px;
   text-decoration: none;
-  margin: 40px 40px;
   cursor: pointer;
   max-height: 250px;
 }
 
 h3{
+  align-self: center;
   text-decoration: none;
 }

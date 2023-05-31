@@ -38,8 +38,8 @@
   <body>
   <div class="cat">
   <div class="categorie">
-    <a href="index.php"><img src="assets/img/avatar.jpg" />
-      <h3>Économie et développement</h3>
+    <a><img id="imageAffiche" src="" alt="" style="max-width: 200px; margin-top: 10px;">
+      <h3 id="nomAffiche">Nouvelle Catégorie</h3>
     </a>
   </div>
   </div>
@@ -47,12 +47,12 @@
       <form class="form" action="index.php">
         <p class="title">Ajouter une nouvelle catégorie</p>
         <label>
-          <input required="" placeholder="" type="title" class="input" />
+          <input id="nomInput" required="" placeholder="" type="title" class="input" />
           <span>Nom de la catégorie</span>
         </label>
 
         <label class="l1">
-          <input required="" placeholder="" type="file" class="input" />
+          <input id="imageInput" required="" placeholder="" type="file" class="input" />
           <span>Image</span>
         </label>
 
@@ -62,7 +62,7 @@
             placeholder=""
             type="color"
             class="input"
-            style="width: 375px; margin-bottom: 10px"
+            style="height: 50px; width: 375px; margin-bottom: 10px"
           />
           <span>Couleur</span>
         </label>
@@ -74,7 +74,7 @@
                   placeholder=""
                   type="color"
                   class="input"
-                  style="width: 375px; margin-bottom: 30px"
+                  style="height: 50px; width: 375px; margin-bottom: 30px"
           />
           <span>Couleur</span>
         </label>
@@ -99,21 +99,51 @@
       <div class="right"></div>
     </div>
   </footer>
-<script>// Récupérer l'élément input par son identifiant
-var inputCouleur = document.getElementById("couleurInput");
+<script>// Récupérer les éléments input par leurs identifiants
+var nomInput = document.getElementById("nomInput");
+var imageInput = document.getElementById("imageInput");
 
-// Récupérer l'élément carré par son identifiant
-var carré = document.getElementById("carré");
+// Récupérer les éléments d'affichage par leurs identifiants
+var nomAffiche = document.getElementById("nomAffiche");
+var imageAffiche = document.getElementById("imageAffiche");
 
-// Fonction pour mettre à jour la couleur du carré
-function mettreÀJourCouleur() {
-  var couleurChoisie = inputCouleur.value;
-  carré.style.backgroundColor = couleurChoisie;
+// Récupérer les éléments input par leurs identifiants
+var couleurInput = document.getElementById("couleurInput");
+var couleurInput2 = document.getElementById("couleurInput2");
+
+// Récupérer l'élément .categorie::before par son sélecteur CSS
+var categorieBefore = document.querySelector(".categorie");
+
+// Fonction pour mettre à jour la couleur de la ligne
+function mettreÀJourCouleurLigne() {
+  var couleur1 = couleurInput.value;
+  var couleur2 = couleurInput2.value;
+  categorieBefore.style.background = "linear-gradient(-45deg, " + couleur1 + " 0%, " + couleur2 + " 100%)";
 }
 
-// Écouter les changements de la valeur du champ de couleur
-inputCouleur.addEventListener("change", mettreÀJourCouleur);
+// Écouter les changements de valeur dans les champs de couleur
+couleurInput.addEventListener("input", mettreÀJourCouleurLigne);
+couleurInput2.addEventListener("input", mettreÀJourCouleurLigne);
 
-// Mettre à jour la couleur du carré lors du chargement initial de la page
-mettreÀJourCouleur();</script>
+// Écouter les changements de valeur dans le champ de nom
+nomInput.addEventListener("input", function() {
+  var nom = nomInput.value;
+  nomAffiche.textContent = nom;
+});
+
+// Écouter les changements de valeur dans le champ de fichier
+imageInput.addEventListener("change", function() {
+  var file = imageInput.files[0];
+  var reader = new FileReader();
+
+  reader.onload = function(e) {
+    var imageSrc = e.target.result;
+    imageAffiche.src = imageSrc;
+  };
+
+  reader.readAsDataURL(file);
+});
+
+
+</script>
 </html>
