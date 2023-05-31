@@ -36,45 +36,66 @@
     </nav>
   </header>
   <body>
-  <div class="cat">
-  <div class="categorie">
-    <a><img id="imageAffiche" src="" alt="" style="max-width: 200px; margin-top: 10px;">
-      <h3 id="nomAffiche">Nouvelle Catégorie</h3>
-    </a>
-  </div>
-  </div>
+    <div class="cat">
+      <div class="categorie">
+        <a
+          ><img
+            id="imageAffiche"
+            src=""
+            alt=""
+            style="max-width: 200px; margin-top: 10px"
+          />
+          <h3 id="nomAffiche">Nouvelle Catégorie</h3>
+        </a>
+      </div>
+    </div>
     <div class="div-form">
-      <form class="form" action="index.php">
+      <form class="form" action="ajouterCategorie.php" method="post">
         <p class="title">Ajouter une nouvelle catégorie</p>
         <label>
-          <input id="nomInput" required="" placeholder="" type="title" class="input" />
+          <input
+            id="nomInput"
+            required=""
+            placeholder=""
+            type="title"
+            class="input"
+            name="nomInput"
+          />
           <span>Nom de la catégorie</span>
         </label>
 
         <label class="l1">
-          <input id="imageInput" required="" placeholder="" type="file" class="input" />
+          <input
+            id="imageInput"
+            placeholder=""
+            type="file"
+            class="input"
+            name="imageInput"
+          />
           <span>Image</span>
         </label>
 
         <label class="l1">
-          <input id="couleurInput"
+          <input
+            id="couleurInput"
             required=""
             placeholder=""
             type="color"
             class="input"
             style="height: 50px; width: 375px; margin-bottom: 10px"
+            name="couleurInput"
           />
           <span>Couleur</span>
         </label>
 
         <label class="l1">
           <input
-                  id="couleurInput2"
-                  required=""
-                  placeholder=""
-                  type="color"
-                  class="input"
-                  style="height: 50px; width: 375px; margin-bottom: 30px"
+            id="couleurInput2"
+            required=""
+            placeholder=""
+            type="color"
+            class="input"
+            style="height: 50px; width: 375px; margin-bottom: 30px"
           />
           <span>Couleur</span>
         </label>
@@ -99,51 +120,51 @@
       <div class="right"></div>
     </div>
   </footer>
-<script>// Récupérer les éléments input par leurs identifiants
-var nomInput = document.getElementById("nomInput");
-var imageInput = document.getElementById("imageInput");
+  <script>
+    // Récupérer les éléments input par leurs identifiants
+    var nomInput = document.getElementById("nomInput");
+    var imageInput = document.getElementById("imageInput");
 
-// Récupérer les éléments d'affichage par leurs identifiants
-var nomAffiche = document.getElementById("nomAffiche");
-var imageAffiche = document.getElementById("imageAffiche");
+    // Récupérer les éléments d'affichage par leurs identifiants
+    var nomAffiche = document.getElementById("nomAffiche");
+    var imageAffiche = document.getElementById("imageAffiche");
 
-// Récupérer les éléments input par leurs identifiants
-var couleurInput = document.getElementById("couleurInput");
-var couleurInput2 = document.getElementById("couleurInput2");
+    // Récupérer les éléments input par leurs identifiants
+    var couleurInput = document.getElementById("couleurInput");
+    var couleurInput2 = document.getElementById("couleurInput2");
 
-// Récupérer l'élément .categorie::before par son sélecteur CSS
-var categorieBefore = document.querySelector(".categorie");
+    // Récupérer l'élément .categorie::before par son sélecteur CSS
+    var categorieBefore = document.querySelector(".categorie");
 
-// Fonction pour mettre à jour la couleur de la ligne
-function mettreÀJourCouleurLigne() {
-  var couleur1 = couleurInput.value;
-  var couleur2 = couleurInput2.value;
-  categorieBefore.style.background = "linear-gradient(-45deg, " + couleur1 + " 0%, " + couleur2 + " 100%)";
-}
+    // Fonction pour mettre à jour la couleur de la ligne
+    function mettreÀJourCouleurLigne() {
+      var couleur1 = couleurInput.value;
+      var couleur2 = couleurInput2.value;
+      categorieBefore.style.background =
+        "linear-gradient(-45deg, " + couleur1 + " 0%, " + couleur2 + " 100%)";
+    }
 
-// Écouter les changements de valeur dans les champs de couleur
-couleurInput.addEventListener("input", mettreÀJourCouleurLigne);
-couleurInput2.addEventListener("input", mettreÀJourCouleurLigne);
+    // Écouter les changements de valeur dans les champs de couleur
+    couleurInput.addEventListener("input", mettreÀJourCouleurLigne);
+    couleurInput2.addEventListener("input", mettreÀJourCouleurLigne);
 
-// Écouter les changements de valeur dans le champ de nom
-nomInput.addEventListener("input", function() {
-  var nom = nomInput.value;
-  nomAffiche.textContent = nom;
-});
+    // Écouter les changements de valeur dans le champ de nom
+    nomInput.addEventListener("input", function () {
+      var nom = nomInput.value;
+      nomAffiche.textContent = nom;
+    });
 
-// Écouter les changements de valeur dans le champ de fichier
-imageInput.addEventListener("change", function() {
-  var file = imageInput.files[0];
-  var reader = new FileReader();
+    // Écouter les changements de valeur dans le champ de fichier
+    imageInput.addEventListener("change", function () {
+      var file = imageInput.files[0];
+      var reader = new FileReader();
 
-  reader.onload = function(e) {
-    var imageSrc = e.target.result;
-    imageAffiche.src = imageSrc;
-  };
+      reader.onload = function (e) {
+        var imageSrc = e.target.result;
+        imageAffiche.src = imageSrc;
+      };
 
-  reader.readAsDataURL(file);
-});
-
-
-</script>
+      reader.readAsDataURL(file);
+    });
+  </script>
 </html>

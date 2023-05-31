@@ -7,7 +7,7 @@ $email = $_POST['mail'] ?? $_GET['mail'];
 $password = $_POST['mdp'] ?? $_GET['mdp'];
 $query = mysqli_query($db, "SELECT * FROM administrateur WHERE email ='$email' AND mdp = '$password';");
 if (mysqli_num_rows($query) > 0) {
-    $_SESSION['idAdministrateur'] = mysqli_fetch_assoc($query)['idAdministrateur'];
+    $_SESSION['idAdministrateur'] = mysqli_fetch_assoc($query)['id_administrateur'];
     header("Location: index.php");
     exit();
 } else {
