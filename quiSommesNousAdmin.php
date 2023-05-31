@@ -65,7 +65,7 @@ if (!isset($_SESSION['idAdministrateur']) || empty($_SESSION['idAdministrateur']
             <div class="div2">
                 <div class="img">
                     <img src="assets/img/forum_journeeforum1.JPG" width="700px" />
-                    <button class="ajouter">MODIFIER</button>
+                    <button class="boutonbeau">MODIFIER</button>
                 </div>
                 <div class="divtexte">
                     <p>
