@@ -75,7 +75,7 @@ if (!isset($_SESSION['idAdministrateur']) || empty($_SESSION['idAdministrateur']
             <div class="categorie"><a href="index.php"><img src="assets/img/avatar.jpg" />
                     <h3>Économie et développement</h3>
                 </a></div>
-            <div class="categorie"><a href="index.php"><img src="assets/img/addIcon.png" />
+            <div class="categorie"><a href="ajouterCategorie.html"><img src="assets/img/addIcon.png" />
                     <h3>Ajouter Catégorie</h3>
                 </a></div>
 

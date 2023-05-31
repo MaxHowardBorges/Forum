@@ -15,7 +15,7 @@ if (!isset($_SESSION['idAdministrateur']) || empty($_SESSION['idAdministrateur']
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/infos.css" />
     <title>Infos - Association Forum de Grasse - Alpes maritimes</title>
 </head>
 
@@ -43,7 +43,9 @@ if (!isset($_SESSION['idAdministrateur']) || empty($_SESSION['idAdministrateur']
             </div>
         </nav>
     </header>
-    <main></main>
+    <main>
+        <button id="ajouter" onclick="window.location.href = 'ajouterEvenement.html'">AJOUTER EVENEMENT</button>
+    </main>
     <footer>
         <div class="bottomnav">
             <div class="left"></div>
