@@ -44,7 +44,7 @@ if (!isset($_SESSION['idAdministrateur']) || empty($_SESSION['idAdministrateur']
         </nav>
     </header>
     <main>
-        <button id="ajouter" onclick="window.location.href = 'ajouterEvenement.html'">AJOUTER EVENEMENT</button>
+        <button id="boutonbeau" onclick="window.location.href = 'ajouterEvenement.html'">AJOUTER EVENEMENT</button>
     </main>
     <footer>
         <div class="bottomnav">

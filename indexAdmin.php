@@ -49,9 +49,9 @@ if (!isset($_SESSION['idAdministrateur']) || empty($_SESSION['idAdministrateur']
             <div class="div4">
                 <div class="img">
                     <img src="assets/img/avatar.jpg" width="700px" />
-                    <button class="ajouter">MODIFIER</button>
+                    <button class="boutonbeau">MODIFIER</button>
                     <img src="assets/img/forum_journeeforum2.JPG" width="700px" />
-                    <button class="ajouter">MODIFIER</button>
+                    <button class="boutonbeau">MODIFIER</button>
                 </div>
                 <div class="divtexte">
                     <h2 id="Mot">Le mot du Président</h2>
@@ -103,7 +103,7 @@ if (!isset($_SESSION['idAdministrateur']) || empty($_SESSION['idAdministrateur']
                     </p>
                     <p>Georges BRUNETTI <br />Président de Forum</p>
                 </div>
-                <button class="ajouter">MODIFIER</button>
+                <button class="boutonbeau">MODIFIER</button>
             </div>
         </div>
 

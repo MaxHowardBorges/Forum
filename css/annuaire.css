@@ -396,31 +396,33 @@ h3{
 }
 
 
-#ajouter {
-    padding: 17px 40px;
-    border-radius: 50px;
+.boutonbeau {
+    --primary-color: #6e3535;
+    --secondary-color: #fff;
+    --hover-color: #f2a341;
+    --arrow-width: 10px;
+    --arrow-stroke: 2px;
+    box-sizing: border-box;
     border: 0;
-    background-color: #f6f6f6;
-    box-shadow: #f2a341 0 0 8px;
-    letter-spacing: 1.5px;
-    font-size: 15px;
-    font-family: Arial, Helvetica, sans-serif;
-    transition: all .5s ease;
+    border-radius: 20px;
+    color: var(--secondary-color);
+    padding: 1em 1.8em;
+    background: var(--primary-color);
+    display: flex;
+    transition: 0.2s background;
+    align-items: center;
+    gap: 0.6em;
+    font-weight: bold;
+    align-items: center;
+    justify-content: center;
     cursor: pointer;
 }
 
-#ajouter:hover {
-    letter-spacing: 3px;
-    background-color: hsl(33, 87%, 60%);
-    color: hsl(0, 0%, 100%);
+.boutonbeau:hover {
+    background-color: var(--hover-color);
 }
 
-#ajouter:active {
-    letter-spacing: 3px;
-    background-color: hsl(33, 87%, 60%);
-    color: hsl(0, 0%, 100%);
-    transform: translateY(10px);
-    transition: 0.5s;
-}
+
+
 
 

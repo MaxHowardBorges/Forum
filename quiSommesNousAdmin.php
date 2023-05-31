@@ -60,7 +60,7 @@ if (!isset($_SESSION['idAdministrateur']) || empty($_SESSION['idAdministrateur']
             L'activité de ces associations devant s'exercer sur la commune de Grasse
             ou sur des communes du Pays de Grasse.
         </p>
-        <button class="ajouter">MODIFIER</button>
+        <button class="boutonbeau">MODIFIER</button>
         <div class="container reveal fade-right">
             <div class="div2">
                 <div class="img">
@@ -86,7 +86,7 @@ if (!isset($_SESSION['idAdministrateur']) || empty($_SESSION['idAdministrateur']
                         nombre d'organisations représentatives dépassait 150, Pour plus de
                         300 membres. <br />
                     </p>
-                    <button class="ajouter">MODIFIER</button>
+                    <button class="boutonbeau">MODIFIER</button>
                 </div>
             </div>
         </div>
@@ -107,7 +107,7 @@ if (!isset($_SESSION['idAdministrateur']) || empty($_SESSION['idAdministrateur']
                 aussi de grandes manifestations culturelles, récréatives et
                 humanitaires pour fédérer les associations entre elles.
             </p>
-            <button class="ajouter">MODIFIER</button>
+            <button class="boutonbeau">MODIFIER</button>
         </div>
         <h3>Une équipe au service des associations</h3>
         <div class="aaa">
@@ -147,7 +147,7 @@ if (!isset($_SESSION['idAdministrateur']) || empty($_SESSION['idAdministrateur']
             </div>
         </div>
         <br />
-        <button class="ajouter">MODIFIER</button>
+        <button class="boutonbeau">MODIFIER</button>
     </main>
     <footer>
         <div class="bottomnav">

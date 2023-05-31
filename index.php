@@ -41,7 +41,7 @@ if (isset($_SESSION['idAdministrateur']) && !empty($_SESSION['idAdministrateur']
       </div>
     </nav>
   </header>
-  <div id="diapo"><button class="ajouter">CONNEXION</button></div>
+  <div id="diapo"></div>
   <main>
     <div class="container reveal fade-left">
       <div class="div4">
@@ -144,7 +144,7 @@ if (isset($_SESSION['idAdministrateur']) && !empty($_SESSION['idAdministrateur']
         <a href="contacter.html">Contacter</a>
         <a href="connexion.html">Connexion</a>
       </div>
-      <div class="right"></div>
+      <div class="right"><button class="boutonbeau">CONNEXION</button></div>
     </div>
   </footer>
 </body>
