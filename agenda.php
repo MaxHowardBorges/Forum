@@ -12,7 +12,7 @@ $db = createDbConnection();
 $query = mysqli_query($db, "SELECT * FROM evenement;");
 while ($row = mysqli_fetch_assoc($query)) {
   $dateDebut = $row["dateDebut"];
-  $couleur = $row["couleur"];
+  $categorie = $row["categorie"];
 }
 ?>
 <!DOCTYPE html>
@@ -61,7 +61,7 @@ while ($row = mysqli_fetch_assoc($query)) {
       // var couleur = "Humanitaire, lien social et Civique";
 
       var dateDebut = "<?php echo $dateDebut; ?>";
-      var couleur = "<?php echo $couleur; ?>";
+      var categorie = "<?php echo $categorie; ?>";
       console.log(dateDebut);
       var currentMonth = new Date().getMonth();
       var currentYear = new Date().getFullYear();
@@ -164,9 +164,9 @@ while ($row = mysqli_fetch_assoc($query)) {
             var div = document.createElement("div");
             div.style.width = "100%";
             div.style.height = "4px";
-            if (couleur == "Art et Culture") {
+            if (categorie == "Art et Culture") {
               div.style.backgroundColor = "#02b804";
-            } else if (couleur == "Humanitaire, lien social et Civique") {
+            } else if (categorie == "Humanitaire, lien social et Civique") {
               div.style.backgroundColor = "#4a03c1";
             }
             tdd.appendChild(div);

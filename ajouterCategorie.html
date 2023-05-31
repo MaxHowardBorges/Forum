@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/form.css" />
+    <link rel="stylesheet" href="/css/quiSommesNous.css" />
+    <title>Association Forum de Grasse - Alpes maritimes</title>
+  </head>
+  <header>
+    <nav class="topnav">
+      <div class="left">
+        <img
+          id="logo"
+          src="/assets/img/forum_logo.png"
+          onclick="window.location.href = 'index.php'"
+        />
+      </div>
+      <div class="right">
+        <div class="dropdown">
+          <a href="index.php">Accueil</a>
+          <div class="dropdown-content">
+            <a href="#Mot">Mot</a>
+            <a href="#Activites">Activites</a>
+          </div>
+        </div>
+        <a href="quiSommesNous.php">Qui Sommes Nous</a>
+        <a href="journéeForum.php">Journée Forum</a>
+        <a class="active" href="annuaire.php">Annuaire</a>
+        <a href="rencontres.php">Rencontres</a>
+        <a href="lesExperts.php">Les Experts</a>
+        <a href="agenda.php">Agenda</a>
+        <a href="infos.php">Infos</a>
+      </div>
+    </nav>
+  </header>
+  <body>
+    <div class="div-form">
+      <form class="form">
+        <p class="title">Ajouter une nouvelle catégorie</p>
+        <label>
+          <input required="" placeholder="" type="title" class="input" />
+          <span>Nom de la catégorie</span>
+        </label>
+
+        <label class="l1">
+          <input required="" placeholder="" type="file" class="input" />
+          <span>Image</span>
+        </label>
+
+        <label class="l1">
+          <input
+            required=""
+            placeholder=""
+            type="color"
+            class="input"
+            style="width: 375px; margin-bottom: 30px"
+          />
+          <span>Couleur</span>
+        </label>
+        <!-- TODO : modifier pour que ce soit un input type submit -->
+        <button>
+          Ajouter
+          <div class="arrow-wrapper">
+            <div class="arrow"></div>
+          </div>
+        </button>
+      </form>
+    </div>
+  </body>
+  <footer>
+    <div class="bottomnav">
+      <div class="left"></div>
+      <div class="center">
+        <a href="partenaires.html">Partenaires</a>
+        <a href="contacter.html">Contacter</a>
+        <a href="deconnexion.php">Deconnexion</a>
+      </div>
+      <div class="right"></div>
+    </div>
+  </footer>
+</html>
