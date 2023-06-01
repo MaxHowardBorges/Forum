@@ -45,7 +45,17 @@ if (isset($_SESSION['idAdministrateur']) && !empty($_SESSION['idAdministrateur']
   </header>
   <div id="diapo"></div>
   <main>
-    <h2>Qui sommes-nous ?</h2>
+    <?php
+    include('modifications.php');
+    require_once 'dbConnect.php';
+    $db = createDbConnection();
+    $result = mysqli_query($db, "SELECT nouveauContenu FROM modification WHERE element='qui' ORDER BY id_modification DESC LIMIT 1;");
+    if ($row = mysqli_fetch_assoc($result)) {
+      $contenu = $row['nouveauContenu'];
+      echo $contenu;
+    }
+    ?>
+    <!-- <h2>Qui sommes-nous ?</h2>
     <p>
       FORUM est une association grassoise, du type loi de 1901, créée en 1984.
       Son objet est de promouvoir la vie associative par toutes initiatives
@@ -57,14 +67,24 @@ if (isset($_SESSION['idAdministrateur']) && !empty($_SESSION['idAdministrateur']
       reconnues sans but lucratif, politique ou confessionnel exclusivement.
       L'activité de ces associations devant s'exercer sur la commune de Grasse
       ou sur des communes du Pays de Grasse.
-    </p>
+    </p> -->
     <div class="container reveal fade-right">
       <div class="div2">
         <div class="img">
           <img src="assets/img/forum_journeeforum1.JPG" width="700px" />
         </div>
         <div class="divtexte">
-          <p>
+          <?php
+          include('modifications.php');
+          require_once 'dbConnect.php';
+          $db = createDbConnection();
+          $result = mysqli_query($db, "SELECT nouveauContenu FROM modification WHERE element='qui2' ORDER BY id_modification DESC LIMIT 1;");
+          if ($row = mysqli_fetch_assoc($result)) {
+            $contenu = $row['nouveauContenu'];
+            echo $contenu;
+          }
+          ?>
+          <!-- <p>
             Dès le départ, il y avait un « esprit forum » avec les
             caractéristiques suivantes :<br />
 
@@ -81,12 +101,22 @@ if (isset($_SESSION['idAdministrateur']) && !empty($_SESSION['idAdministrateur']
             démenti de cet événement. Au 37e Forum, En septembre 2017, le
             nombre d'organisations représentatives dépassait 150, Pour plus de
             300 membres. <br />
-          </p>
+          </p> -->
         </div>
       </div>
     </div>
     <div class="div3">
-      <p>
+      <?php
+      include('modifications.php');
+      require_once 'dbConnect.php';
+      $db = createDbConnection();
+      $result = mysqli_query($db, "SELECT nouveauContenu FROM modification WHERE element='qui3' ORDER BY id_modification DESC LIMIT 1;");
+      if ($row = mysqli_fetch_assoc($result)) {
+        $contenu = $row['nouveauContenu'];
+        echo $contenu;
+      }
+      ?>
+      <!-- <p>
         L’Association FORUM publie annuellement l’Annuaire des Associations de
         Grasse et du Pays Grassois, commencée en 1990, et qui s’enrichit
         chaque année d’un nombre croissant d’associations adhérentes.
@@ -101,11 +131,21 @@ if (isset($_SESSION['idAdministrateur']) && !empty($_SESSION['idAdministrateur']
         suivre même de votre smartphone. <br />L'Association FORUM organise
         aussi de grandes manifestations culturelles, récréatives et
         humanitaires pour fédérer les associations entre elles.
-      </p>
+      </p> -->
     </div>
     <h3>Une équipe au service des associations</h3>
     <div class="aaa">
-      <div class="flip-card">
+      <?php
+      include('modifications.php');
+      require_once 'dbConnect.php';
+      $db = createDbConnection();
+      $result = mysqli_query($db, "SELECT nouveauContenu FROM modification WHERE element='equipe' ORDER BY id_modification DESC LIMIT 1;");
+      if ($row = mysqli_fetch_assoc($result)) {
+        $contenu = $row['nouveauContenu'];
+        echo $contenu;
+      }
+      ?>
+      <!-- <div class="flip-card">
         <div id="flip-card-inner1" class="flip-card-inner">
           <div class="flip-card-front">
             <h2>Le bureau</h2>
@@ -138,7 +178,7 @@ if (isset($_SESSION['idAdministrateur']) && !empty($_SESSION['idAdministrateur']
             </p>
           </div>
         </div>
-      </div>
+      </div> -->
     </div>
     <br />
   </main>

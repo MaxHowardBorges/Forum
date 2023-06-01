@@ -50,7 +50,17 @@ if (isset($_SESSION['idAdministrateur']) && !empty($_SESSION['idAdministrateur']
           <img src="assets/img/forum_journeeforum2.JPG" width="700px" />
         </div>
         <div class="divtexte">
-          <h2 id="Mot">Le mot du Président</h2>
+          <?php
+          include('modifications.php');
+          require_once 'dbConnect.php';
+          $db = createDbConnection();
+          $result = mysqli_query($db, "SELECT nouveauContenu FROM modification WHERE element='mot' ORDER BY id_modification DESC LIMIT 1;");
+          if ($row = mysqli_fetch_assoc($result)) {
+            $contenu = $row['nouveauContenu'];
+            echo $contenu;
+          }
+          ?>
+          <!-- <h2 id="Mot">Le mot du Président</h2>
           <p>
             Chers amis, <br />Le conseil d’administration de FORUM est fier de
             pouvoir mettre à votre disposition, en dépit des difficultés liées
@@ -97,7 +107,7 @@ if (isset($_SESSION['idAdministrateur']) && !empty($_SESSION['idAdministrateur']
             membres ou responsables associatifs, FORUM est plus que jamais à
             votre service.
           </p>
-          <p>Georges BRUNETTI <br />Président de Forum</p>
+          <p>Georges BRUNETTI <br />Président de Forum</p> -->
         </div>
       </div>
     </div>

@@ -53,57 +53,19 @@ if (!isset($_SESSION['idAdministrateur']) || empty($_SESSION['idAdministrateur']
                     <img src="assets/img/forum_journeeforum2.JPG" width="700px" />
                     <button class="boutonbeau">MODIFIER</button>
                 </div>
-                <div class="divtexte">
-                    <h2 id="Mot">Le mot du Président</h2>
-                    <p>
-                        Chers amis, <br />Le conseil d’administration de FORUM est fier de
-                        pouvoir mettre à votre disposition, en dépit des difficultés liées
-                        à la covid-19, ce magnifique outil qu’est l’ANNUAIRE DES
-                        ASSOCIATIONS 2021. <br />Avec le FORUM des associations,
-                        l’événement phare de notre rentrée à mi-septembre, l’annuaire que
-                        nous avons créé pour vous est un incontournable de la vie
-                        grassoise.<br />Ce guide est destiné à mieux faire connaitre les
-                        associations grassoises (et du pays de Grasse), leurs richesses et
-                        leurs complémentarités. Il offre un panoramique de la dynamique
-                        associative.<br />Chacun y trouvera son compte, quelque soient ses
-                        pôles d’intérêt. <br />En 2020 cette dynamique aura souffert des
-                        confinements imposés. Il a fallu se montrer encore plus créatifs,
-                        utiliser de nouveaux modes de communication. Pour nombre d’entre
-                        nous, les réunions « virtuelles » ont remplacé nos rencontres et
-                        échanges de vive voix. La plupart de nos manifestations ont été
-                        reportées, voire annulées … Les finances du monde associatif en
-                        souffrent …<br />De ces nouvelles contraintes tirons ensemble une
-                        force nouvelle, une dynamique salutaire, qui nous serviront dans
-                        le futur.<br />2021 sera, nous l’espérons, une année de
-                        consolidation et de reprise du cours normal de nos activités, mais
-                        avec de nouveaux savoir-faire acquis pendant cette crise
-                        sanitaire. <br />Quoiqu’il en soit la vie associative a toujours
-                        été et restera un des piliers du savoir-vivre ensemble, un lieu de
-                        partage et d’échanges, un lien de solidarité. <br />C’est ainsi
-                        que nous le vivons à FORUM, au service du monde associatif depuis
-                        maintenant 41 ans.<br />Acteur et fédérateur du monde associatif
-                        grassois, FORUM se renouvelle aussi.<br />Changement de
-                        présidence, de nouveaux challenges et discussions autour de la
-                        reprise totale de l’accueil de la Maison Des Associations par les
-                        structures municipales, voilà les nouveaux horizons 2021.
-                        <br />FORUM continue aussi sa mission fédératrice, de conseil et
-                        d’appui au monde associatif.<br />Nous créons un collège
-                        d’experts, en cours de mise en place. Son rôle sera de vous
-                        apporter les meilleurs éclairages dans la plupart des compétences
-                        utiles à la vie associative (comptable, juridique, social,
-                        informatique, nouvelles technologies, communication, etc…).<br />Enfin
-                        nous restons plus que jamais à votre écoute et serons vos relais
-                        de communication des manifestations et évènements associatifs, au
-                        travers de notre site internet
-                        (http://www.assoforum-paysdegrasse.fr/) et de notre page Facebook
-                        (http://www.facebook.com/forum.grasse.paysdegrasse). <br />Que
-                        vous soyez à la recherche de VOTRE future association, déjà
-                        membres ou responsables associatifs, FORUM est plus que jamais à
-                        votre service.
-                    </p>
-                    <p>Georges BRUNETTI <br />Président de Forum</p>
+                <div class="divtexte" id="mot" contenteditable="true">
+                    <?php
+                    include('modifications.php');
+                    require_once 'dbConnect.php';
+                    $db = createDbConnection();
+                    $result = mysqli_query($db, "SELECT nouveauContenu FROM modification WHERE element='mot' ORDER BY id_modification DESC LIMIT 1;");
+                    if ($row = mysqli_fetch_assoc($result)) {
+                        $contenu = $row['nouveauContenu'];
+                        echo $contenu;
+                    }
+                    ?>
                 </div>
-                <button class="boutonbeau">MODIFIER</button>
+                <button class="boutonbeau" onclick="enregistrerModifications('mot')">MODIFIER</button>
             </div>
         </div>
 
@@ -139,6 +101,18 @@ if (!isset($_SESSION['idAdministrateur']) || empty($_SESSION['idAdministrateur']
             }
 
             window.addEventListener("scroll", reveal);
+
+            function enregistrerModifications(elm) {
+                var nouveauContenu = document.getElementById(elm).innerHTML;
+                var xhr = new XMLHttpRequest();
+                xhr.open("POST", "modifications.php", true);
+                xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+                xhr.onreadystatechange = function() {
+                    if (xhr.readyState === 4 && xhr.status === 200) {}
+                };
+                var data = "elm=" + encodeURIComponent(elm) + "&nouveauContenu=" + encodeURIComponent(nouveauContenu);
+                xhr.send(data);
+            }
         </script>
     </main>
     <footer>
