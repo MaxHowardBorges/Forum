@@ -57,7 +57,7 @@ if (isset($_SESSION['idAdministrateur']) && !empty($_SESSION['idAdministrateur']
       </div>
       <div class="categorie">
         <a href="index.php"><img src="assets/img/forum_categoriesport.jpg" />
-          <h3>Sport</h3>
+          <h3>Sports</h3>
         </a>
       </div>
       <div class="categorie">
