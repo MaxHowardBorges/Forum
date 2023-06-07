@@ -20,7 +20,7 @@ InitialiserIncrement('evenement');
 if ($type == "Une fois") {
     $query = mysqli_query($db, "INSERT INTO evenement (titre, description, dateDebut, heureDebut, dateFin, heureFin, type, categorie) VALUES ('$titre', '$description', '$dateDebut', '$heureDebut', '$dateFin', '$heureFin', '$type', '$categorie');");
 } else if ($type == "Quotidien") {
-    $endDate = date("Y-m-d", strtotime($dateDebut . '+ 1 weeks'));
+    $endDate = date("Y-m-d", strtotime($dateDebut . '+ 2 days'));
     while ($dateDebut <= $endDate) {
         $query = mysqli_query($db, "INSERT INTO evenement (titre, description, dateDebut, heureDebut, dateFin, heureFin, type, categorie) VALUES ('$titre', '$description', '$dateDebut', '$heureDebut', '$dateFin', '$heureFin', '$type', '$categorie');");
         $dateDebut = date("Y-m-d", strtotime($dateDebut . '+ 1 days'));

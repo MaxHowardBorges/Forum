@@ -74,7 +74,7 @@ if (isset($_SESSION['idAdministrateur']) && !empty($_SESSION['idAdministrateur']
     $currentMonth = date('m');
     require_once 'dbConnect.php';
     $db = createDbConnection();
-    $query = mysqli_query($db, "SELECT * FROM evenement ORDER BY 'dateDebut' ASC;");
+    $query = mysqli_query($db, "SELECT * FROM evenement ORDER BY dateDebut ASC;");
     while ($row = mysqli_fetch_assoc($query)) {
       $dateDebut = $row['dateDebut'];
       $heureDebut = $row['heureDebut'];
@@ -92,7 +92,7 @@ if (isset($_SESSION['idAdministrateur']) && !empty($_SESSION['idAdministrateur']
         $id = $row['id_evenement'];
         echo '<div onclick="afficherMasquer(' . $id . ')" class="event">';
         $categorie = $row['categorie'];
-        $queryColor =  mysqli_query($db, "SELECT couleur FROM categorie WHERE nom='$categorie';");
+        $queryColor = mysqli_query($db, "SELECT couleur FROM categorie WHERE nom='$categorie';");
         $color = mysqli_fetch_assoc($queryColor);
         $categorie = htmlspecialchars($row['categorie'], ENT_QUOTES, 'UTF-8');
         echo '<div class="colorbox" style="background-color: ' . $color['couleur'] . ' "></div>';
