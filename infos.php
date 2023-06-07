@@ -110,9 +110,9 @@ if (isset($_SESSION['idAdministrateur']) && !empty($_SESSION['idAdministrateur']
         $moisNameFin = $mois[ltrim($moisFin, '0')];
         $hourFin = substr($heureFin, 0, 2);
         $minuteFin = substr($heureFin, 3, 2);
-        echo $jourNameDebut . ' ' . $dayOfMonthDebut . ' ' . $moisNameDebut . ' ' . $hourDebut . 'h' . $minuteDebut . ' au ' . $jourNameFin . ' ' . $dayOfMonthFin . ' ' . $moisNameFin . ' ' . $hourFin . 'h' . $minuteFin;
+        echo '<div class="date">' . $jourNameDebut . ' ' . $dayOfMonthDebut . ' ' . $moisNameDebut . ' ' . $hourDebut . 'h' . $minuteDebut . ' au ' . $jourNameFin . ' ' . $dayOfMonthFin . ' ' . $moisNameFin . ' ' . $hourFin . 'h' . $minuteFin . '</div>';
         echo '<br><br>';
-        echo $row['titre'];
+        echo '<div class="titre">' . $row['titre'] . '</div>';
         echo '<br><br>';
         echo '<div class="hide" id=' . $id . '>' . nl2br($row['description']) . '</div>';
         echo '</div>';

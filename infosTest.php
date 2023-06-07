@@ -1,10 +1,8 @@
 <?php
-if (session_status() != PHP_SESSION_ACTIVE) {
-    session_save_path('/var/www/sessions/');
-    session_start();
-}
-if (!isset($_SESSION['idAdministrateur']) || empty($_SESSION['idAdministrateur'])) {
-    header("Location: connexion.html");
+session_save_path('/var/www/sessions/');
+session_start();
+if (isset($_SESSION['idAdministrateur']) && !empty($_SESSION['idAdministrateur'])) {
+    include('infosAdmin.php');
     exit();
 }
 ?>
@@ -44,7 +42,6 @@ if (!isset($_SESSION['idAdministrateur']) || empty($_SESSION['idAdministrateur']
         </nav>
     </header>
     <main>
-        <button class="boutonbeau" onclick="window.location.href = 'ajouterEvenement.html'">AJOUTER EVENEMENT</button>
         <?php
         $currentMonth = date('n');
         $currentYear = date('Y');

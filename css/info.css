@@ -133,7 +133,7 @@ main {
   margin-right: 200px;
 }
 
-h1{
+.titre{
   font-weight: bold;
 }
 
@@ -144,7 +144,6 @@ h1{
   border-radius: 20px;
   cursor: pointer;
   font-family: Arial, Helvetica, sans-serif;
-  font-weight: bold;
 
 }
 
@@ -152,6 +151,8 @@ h1{
   background-color: var(--hover-color);
   color: #f2a341;
 }
+
+
 
 .colorbox {
   float: left;
@@ -189,6 +190,7 @@ h1{
 
 .hide {
   display: none;
+  background-color: #fff;
 }
 
 
