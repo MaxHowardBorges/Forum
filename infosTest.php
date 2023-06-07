@@ -74,7 +74,7 @@ if (isset($_SESSION['idAdministrateur']) && !empty($_SESSION['idAdministrateur']
         $currentMonth = date('m');
         require_once 'dbConnect.php';
         $db = createDbConnection();
-        $query = mysqli_query($db, "SELECT * FROM evenement ORDER BY dateDebut ASC;");
+        $query = mysqli_query($db, "SELECT * FROM evenement ORDER BY dateDebut ASC, heureDebut ASC;");
         while ($row = mysqli_fetch_assoc($query)) {
             $dateDebut = $row['dateDebut'];
             $heureDebut = $row['heureDebut'];
