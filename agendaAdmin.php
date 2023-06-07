@@ -135,7 +135,9 @@ while ($row = mysqli_fetch_assoc($query)) {
                 tbr.appendChild(after);
                 var tbr = tb.insertRow(-1);
                 for (var i = 0; i < jours.length; i++) {
-                    tbr.insertCell(-1).appendChild(document.createTextNode(jours[i]));
+                    var days = tbr.insertCell(-1);
+                    days.setAttribute("class", "days");
+                    days.appendChild(document.createTextNode(jours[i]));
                 }
                 var tbr = document.createElement("tr");
                 var column = 0;
@@ -148,6 +150,7 @@ while ($row = mysqli_fetch_assoc($query)) {
                     if (currentMonth === new Date().getMonth()) {
                         i === thisDay ? (tdd.style.color = "#FF0000") : null;
                     }
+                    tdd.setAttribute("class", "number");
                     tdd.appendChild(document.createTextNode(i));
                     column++;
                     if (column === 7) {
@@ -164,6 +167,7 @@ while ($row = mysqli_fetch_assoc($query)) {
                     }
                     if (date == dateDebut) {
                         var div = document.createElement("div");
+                        div.setAttribute("class", "event");
                         div.style.width = "100%";
                         div.style.height = "4px";
                         if (categorie == "Art et Culture") {
