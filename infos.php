@@ -81,9 +81,11 @@ if (isset($_SESSION['idAdministrateur']) && !empty($_SESSION['idAdministrateur']
       $dateFin = $row['dateFin'];
       $heureFin = $row['heureFin'];
       $eventMonth = date('m', strtotime($dateDebut));
-      if ($eventMonth == $currentMonth || $eventMonth >= $currentMonth) {
-        if ($eventMonth > $currentMonth) {
+      $eventYear = date('Y', strtotime($dateDebut));
+      if ($eventMonth == $currentMonth || $eventMonth >= $currentMonth || $eventYear >= $currentYear) {
+        if ($eventMonth > $currentMonth || $eventYear > $currentYear) {
           $currentMonth = ltrim($eventMonth, '0');
+          $currentYear = $eventYear;
           $currentMonthName = $mois[$currentMonth];
           $currentMonthYear = $currentMonthName . ' ' . $currentYear;
           echo '<h1>' . $currentMonthYear . '</h1>';
