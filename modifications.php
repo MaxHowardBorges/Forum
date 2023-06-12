@@ -5,6 +5,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $nouveauContenu = $_POST["nouveauContenu"];
         require_once 'dbConnect.php';
         $db = createDbConnection();
+        InitialiserIncrement('modification');
         $query = mysqli_query($db, "INSERT INTO modification (`element`, `nouveauContenu`) VALUES ('$elm', '$nouveauContenu');");
     }
 }
