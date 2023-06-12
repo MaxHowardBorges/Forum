@@ -45,46 +45,21 @@ if (isset($_SESSION['idAdministrateur']) && !empty($_SESSION['idAdministrateur']
   <main>
     <h1>Annuaire des associations</h1>
     <div class="cat">
-      <div class="categorie">
-        <a href="index.php"><img src="assets/img/forum_categorieartsetculture.jpg" />
-          <h3>Art & Culture</h3>
-        </a>
-      </div>
-      <div class="categorie">
-        <a href="index.php"><img src="assets/img/forum_categoriehumanitairesocial.jpg" />
-          <h3>Humanitaire, lien sociale et Civique</h3>
-        </a>
-      </div>
-      <div class="categorie">
-        <a href="index.php"><img src="assets/img/forum_categoriesport.jpg" />
-          <h3>Sports</h3>
-        </a>
-      </div>
-      <div class="categorie">
-        <a href="index.php"><img src="assets/img/forum_categorieloisirs.jpg" />
-          <h3>Animations, Loisirs et Jeunesse</h3>
-        </a>
-      </div>
-      <div class="categorie">
-        <a href="index.php"><img src="assets/img/forum_categoriebienetre.jpg" />
-          <h3>Bien-être</h3>
-        </a>
-      </div>
-      <div class="categorie">
-        <a href="index.php"><img src="assets/img/avatar.jpg" />
-          <h3>Écologie & environnement</h3>
-        </a>
-      </div>
-      <div class="categorie">
-        <a href="index.php"><img src="assets/img/avatar.jpg" />
-          <h3>Anciens combattants et assimilés</h3>
-        </a>
-      </div>
-      <div class="categorie">
-        <a href="index.php"><img src="assets/img/avatar.jpg" />
-          <h3>Économie et développement</h3>
-        </a>
-      </div>
+      <?php
+      require_once 'dbConnect.php';
+      $db = createDbConnection();
+      $query = mysqli_query($db, "SELECT * FROM categorie;");
+      while ($row = mysqli_fetch_assoc($query)) {
+        $nom = $row['nom'];
+        $couleur1 = $row['couleur'];
+        $couleur2 = $row['couleur2'];
+        echo '<div class="categorie" style="--couleur1: ' . $couleur1 . '; --couleur2: ' . $couleur2 . '">';
+        echo '<a href="categorie.php?categorie=' . $nom . '"><img src="assets/img/forum_categorieartsetculture.jpg" />';
+        echo '<h3>' . $nom . '</h3>';
+        echo '</a>';
+        echo '</div>';
+      }
+      ?>
     </div>
   </main>
   <footer>
