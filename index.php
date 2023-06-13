@@ -43,16 +43,6 @@ if (isset($_SESSION['idAdministrateur']) && !empty($_SESSION['idAdministrateur']
   </header>
   <div id="diapo"></div>
   <main>
-    <?php
-    require_once 'dbConnect.php';
-    $db = createDbConnection();
-    $dateActuelle = date('Y-m-d');
-    $dateDans15Jours = date('Y-m-d', strtotime('+15 days'));
-    $query = mysqli_query($db, "SELECT * FROM evenement WHERE dateDebut BETWEEN '$dateActuelle' AND '$dateDans15Jours' ORDER BY dateDebut ASC, heureDebut ASC;");
-    while ($row = mysqli_fetch_assoc($query)) {
-      echo htmlspecialchars($row['titre'], ENT_QUOTES, 'UTF-8');
-    }
-    ?>
     <div id="news">
       <div class="card">
         <input type="radio" name="select" id="slide_1" checked>
@@ -124,7 +114,6 @@ if (isset($_SESSION['idAdministrateur']) && !empty($_SESSION['idAdministrateur']
           $result = mysqli_query($db, "SELECT nouveauContenu FROM modification WHERE element='mot' ORDER BY id_modification DESC LIMIT 1;");
           if ($row = mysqli_fetch_assoc($result)) {
             $contenu = $row['nouveauContenu'];
-            $contenu =  htmlspecialchars($contenu, ENT_QUOTES, 'UTF-8');
             echo $contenu;
           }
           ?>

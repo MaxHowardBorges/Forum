@@ -90,14 +90,13 @@ if (isset($_SESSION['idAdministrateur']) && !empty($_SESSION['idAdministrateur']
           $currentMonthYear = $currentMonthName . ' ' . $currentYear;
           echo '<h1>' . $currentMonthYear . '</h1>';
         }
-        echo '<h1> ------------------------------ </h1>';
         $id = $row['id_evenement'];
         echo '<div onclick="afficherMasquer(' . $id . ')" class="event">';
         $categorie = $row['categorie'];
         $queryColor = mysqli_query($db, "SELECT couleur FROM categorie WHERE nom='$categorie';");
         $color = mysqli_fetch_assoc($queryColor);
         $categorie = htmlspecialchars($row['categorie'], ENT_QUOTES, 'UTF-8');
-        echo '<div class="colorbox" style="background-color: ' . $color['couleur'] . ' "></div>';
+        echo '<div class="colorbox" style="background-color: ' . $color['couleur'] . ';border-color: ' . $color['couleur'] . ' "></div>';
         $jourDebut = date('N', strtotime($dateDebut));
         $jourNameDebut = $jours[$jourDebut];
         $dayOfMonthDebut = ltrim(date('d', strtotime($dateDebut)), '0');
@@ -112,15 +111,17 @@ if (isset($_SESSION['idAdministrateur']) && !empty($_SESSION['idAdministrateur']
         $moisNameFin = $mois[ltrim($moisFin, '0')];
         $hourFin = substr($heureFin, 0, 2);
         $minuteFin = substr($heureFin, 3, 2);
+        echo '<div class = "eventtxt">';
         echo '<div class="date">' . $jourNameDebut . ' ' . $dayOfMonthDebut . ' ' . $moisNameDebut . ' ' . $hourDebut . 'h' . $minuteDebut . ' au ' . $jourNameFin . ' ' . $dayOfMonthFin . ' ' . $moisNameFin . ' ' . $hourFin . 'h' . $minuteFin . '</div>';
         echo '<br><br>';
         echo '<div class="titre">' .  htmlspecialchars($row['titre'], ENT_QUOTES, 'UTF-8') . '</div>';
         echo '<br><br>';
-        echo '<div class="hide" id=' . $id . '>' .  htmlspecialchars(nl2br($row['description']), ENT_QUOTES, 'UTF-8') . '</div>';
+        echo '<div class="hide" id=' . $id . '>' . nl2br($row['description']) . '</div>';
+        echo '</div>';
+        echo '</div>';
         echo '</div>';
       }
     }
-    echo '<h1> ------------------------------ </h1>';
     ?>
   </main>
   <footer>
