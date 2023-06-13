@@ -75,6 +75,7 @@
         $query = mysqli_query($db, "SELECT * FROM categorie;");
         while ($row = mysqli_fetch_assoc($query)) {
           $nom = $row['nom'];
+          $nom = htmlspecialchars($nom, ENT_QUOTES, 'UTF-8');
           echo '<option value="' . $nom . '">' . $nom . '</option>';
         }
         ?>

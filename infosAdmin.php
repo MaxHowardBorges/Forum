@@ -117,9 +117,9 @@ if (!isset($_SESSION['idAdministrateur']) || empty($_SESSION['idAdministrateur']
                 echo '<div class = "eventtxt">';
                 echo '<div class="date">' . $jourNameDebut . ' ' . $dayOfMonthDebut . ' ' . $moisNameDebut . ' ' . $hourDebut . 'h' . $minuteDebut . ' au ' . $jourNameFin . ' ' . $dayOfMonthFin . ' ' . $moisNameFin . ' ' . $hourFin . 'h' . $minuteFin . '</div>';
                 echo '<br><br>';
-                echo '<div class="titre">' . $row['titre'] . '</div>';
+                echo '<div class="titre">' .  htmlspecialchars($row['titre'], ENT_QUOTES, 'UTF-8') . '</div>';
                 echo '<br><br>';
-                echo '<div class="hide" id=' . $id . '>' . nl2br($row['description']) . '</div>';
+                echo '<div class="hide" id=' . $id . '>' .  htmlspecialchars(nl2br($row['description']), ENT_QUOTES, 'UTF-8') . '</div>';
                 echo '</div>';
                 echo '<div class="modif"> <button class="boutonbeau">MODIFIER</button> <button class="boutonbeau">SUPPRIMER</button>';
                 echo '</div>';

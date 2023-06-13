@@ -51,6 +51,7 @@ if (isset($_SESSION['idAdministrateur']) && !empty($_SESSION['idAdministrateur']
       $query = mysqli_query($db, "SELECT * FROM categorie;");
       while ($row = mysqli_fetch_assoc($query)) {
         $nom = $row['nom'];
+        $nom = htmlspecialchars($nom, ENT_QUOTES, 'UTF-8');
         $couleur1 = $row['couleur'];
         $couleur2 = $row['couleur2'];
         echo '<div class="categorie" style="--couleur1: ' . $couleur1 . '; --couleur2: ' . $couleur2 . '">';

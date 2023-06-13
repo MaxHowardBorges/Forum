@@ -50,7 +50,7 @@ if (isset($_SESSION['idAdministrateur']) && !empty($_SESSION['idAdministrateur']
     $dateDans15Jours = date('Y-m-d', strtotime('+15 days'));
     $query = mysqli_query($db, "SELECT * FROM evenement WHERE dateDebut BETWEEN '$dateActuelle' AND '$dateDans15Jours' ORDER BY dateDebut ASC, heureDebut ASC;");
     while ($row = mysqli_fetch_assoc($query)) {
-      echo $row['titre'];
+      echo htmlspecialchars($row['titre'], ENT_QUOTES, 'UTF-8');
     }
     ?>
     <div id="news">
@@ -124,6 +124,7 @@ if (isset($_SESSION['idAdministrateur']) && !empty($_SESSION['idAdministrateur']
           $result = mysqli_query($db, "SELECT nouveauContenu FROM modification WHERE element='mot' ORDER BY id_modification DESC LIMIT 1;");
           if ($row = mysqli_fetch_assoc($result)) {
             $contenu = $row['nouveauContenu'];
+            $contenu =  htmlspecialchars($contenu, ENT_QUOTES, 'UTF-8');
             echo $contenu;
           }
           ?>

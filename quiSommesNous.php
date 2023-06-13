@@ -52,6 +52,7 @@ if (isset($_SESSION['idAdministrateur']) && !empty($_SESSION['idAdministrateur']
     $result = mysqli_query($db, "SELECT nouveauContenu FROM modification WHERE element='qui' ORDER BY id_modification DESC LIMIT 1;");
     if ($row = mysqli_fetch_assoc($result)) {
       $contenu = $row['nouveauContenu'];
+      $contenu = htmlspecialchars($contenu, ENT_QUOTES, 'UTF-8');
       echo $contenu;
     }
     ?>
@@ -81,6 +82,7 @@ if (isset($_SESSION['idAdministrateur']) && !empty($_SESSION['idAdministrateur']
           $result = mysqli_query($db, "SELECT nouveauContenu FROM modification WHERE element='qui2' ORDER BY id_modification DESC LIMIT 1;");
           if ($row = mysqli_fetch_assoc($result)) {
             $contenu = $row['nouveauContenu'];
+            $contenu = htmlspecialchars($contenu, ENT_QUOTES, 'UTF-8');
             echo $contenu;
           }
           ?>
@@ -113,6 +115,7 @@ if (isset($_SESSION['idAdministrateur']) && !empty($_SESSION['idAdministrateur']
       $result = mysqli_query($db, "SELECT nouveauContenu FROM modification WHERE element='qui3' ORDER BY id_modification DESC LIMIT 1;");
       if ($row = mysqli_fetch_assoc($result)) {
         $contenu = $row['nouveauContenu'];
+        $contenu = htmlspecialchars($contenu, ENT_QUOTES, 'UTF-8');
         echo $contenu;
       }
       ?>
@@ -142,6 +145,7 @@ if (isset($_SESSION['idAdministrateur']) && !empty($_SESSION['idAdministrateur']
       $result = mysqli_query($db, "SELECT nouveauContenu FROM modification WHERE element='equipe' ORDER BY id_modification DESC LIMIT 1;");
       if ($row = mysqli_fetch_assoc($result)) {
         $contenu = $row['nouveauContenu'];
+        $contenu = htmlspecialchars($contenu, ENT_QUOTES, 'UTF-8');
         echo $contenu;
       }
       ?>

@@ -45,6 +45,7 @@
         $query = mysqli_query($db, "SELECT * FROM association WHERE categorie='$categorie';");
         while ($row = mysqli_fetch_assoc($query)) {
             $nom = $row['nom'];
+            $nom = htmlspecialchars($nom, ENT_QUOTES, 'UTF-8');
             echo '<div class="asso">';
             echo '<a href="association.php?association=' . $nom . '">' . $nom . '<p>Themes : ' . $row['themes'] . ' </p> </a>';
             echo '</div>';

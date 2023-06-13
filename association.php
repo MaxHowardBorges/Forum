@@ -45,7 +45,7 @@
         $query = mysqli_query($db, "SELECT * FROM association WHERE nom='$association';");
         while ($row = mysqli_fetch_assoc($query)) {
             echo '<p>Themes : ' . $row['themes'] . '</p>';
-            echo '<p>' . nl2br($row['description']) . '</p>';
+            echo '<p>' . htmlspecialchars(nl2br($row['description']), ENT_QUOTES, 'UTF-8') . '</p>';
         }
         ?>
     </main>
