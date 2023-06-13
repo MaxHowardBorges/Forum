@@ -47,7 +47,7 @@ if (!isset($_SESSION['idAdministrateur']) || empty($_SESSION['idAdministrateur']
     <main>
         <h1>Annuaire des associations</h1>
 
-        <button class="boutonbeau" id="ajouter" onclick="window.location.href = 'ajouterAssociation.html'">AJOUTER ASSOCIATION</button>
+        <button class="boutonbeau" id="ajouter" onclick="window.location.href = 'ajouterAssociationForm.php'">AJOUTER ASSOCIATION</button>
         <div class="cat">
             <?php
             require_once 'dbConnect.php';

@@ -44,7 +44,7 @@ if (!isset($_SESSION['idAdministrateur']) || empty($_SESSION['idAdministrateur']
         </nav>
     </header>
     <main>
-        <button class="boutonbeau" onclick="window.location.href = 'ajouterEvenement.html'">AJOUTER EVENEMENT</button>
+        <button class="boutonbeau" id="boutonAjout" onclick="window.location.href = 'ajouterEvenementForm.php'">AJOUTER EVENEMENT</button>
         <?php
         $currentMonth = date('n');
         $currentYear = date('Y');
@@ -93,14 +93,13 @@ if (!isset($_SESSION['idAdministrateur']) || empty($_SESSION['idAdministrateur']
                     $currentMonthYear = $currentMonthName . ' ' . $currentYear;
                     echo '<h1>' . $currentMonthYear . '</h1>';
                 }
-                echo '<h1> ------------------------------ </h1>';
                 $id = $row['id_evenement'];
                 echo '<div onclick="afficherMasquer(' . $id . ')" class="event">';
                 $categorie = $row['categorie'];
-                $queryColor =  mysqli_query($db, "SELECT couleur FROM categorie WHERE nom='$categorie';");
+                $queryColor = mysqli_query($db, "SELECT couleur FROM categorie WHERE nom='$categorie';");
                 $color = mysqli_fetch_assoc($queryColor);
                 $categorie = htmlspecialchars($row['categorie'], ENT_QUOTES, 'UTF-8');
-                echo '<div class="colorbox" style="background-color: ' . $color['couleur'] . ' "></div>';
+                echo '<div class="colorbox" style="background-color: ' . $color['couleur'] . ';border-color: ' . $color['couleur'] . ' "></div>';
                 $jourDebut = date('N', strtotime($dateDebut));
                 $jourNameDebut = $jours[$jourDebut];
                 $dayOfMonthDebut = ltrim(date('d', strtotime($dateDebut)), '0');
@@ -115,15 +114,18 @@ if (!isset($_SESSION['idAdministrateur']) || empty($_SESSION['idAdministrateur']
                 $moisNameFin = $mois[ltrim($moisFin, '0')];
                 $hourFin = substr($heureFin, 0, 2);
                 $minuteFin = substr($heureFin, 3, 2);
+                echo '<div class = "eventtxt">';
                 echo '<div class="date">' . $jourNameDebut . ' ' . $dayOfMonthDebut . ' ' . $moisNameDebut . ' ' . $hourDebut . 'h' . $minuteDebut . ' au ' . $jourNameFin . ' ' . $dayOfMonthFin . ' ' . $moisNameFin . ' ' . $hourFin . 'h' . $minuteFin . '</div>';
                 echo '<br><br>';
                 echo '<div class="titre">' . $row['titre'] . '</div>';
                 echo '<br><br>';
                 echo '<div class="hide" id=' . $id . '>' . nl2br($row['description']) . '</div>';
                 echo '</div>';
+                echo '<div class="modif"> <button class="boutonbeau">MODIFIER</button> <button class="boutonbeau">SUPPRIMER</button>';
+                echo '</div>';
+                echo '</div>';
             }
         }
-        echo '<h1> ------------------------------ </h1>';
         ?>
     </main>
     <footer>
@@ -146,6 +148,25 @@ if (!isset($_SESSION['idAdministrateur']) || empty($_SESSION['idAdministrateur']
                 texte.style.display = "none";
             }
         }
+
+        window.addEventListener('DOMContentLoaded', function() {
+            var eventDivs = document.getElementsByClassName('event');
+
+            for (let i = 0; i < eventDivs.length; i++) {
+                let eventDiv = eventDivs[i];
+                let colorBox = eventDiv.querySelector('.colorbox');
+
+                eventDiv.addEventListener('mouseover', function() {
+                    var computedStyle = window.getComputedStyle(colorBox);
+                    var borderColor = computedStyle.backgroundColor;
+                    eventDiv.style.borderColor = borderColor;
+                });
+
+                eventDiv.addEventListener('mouseout', function() {
+                    eventDiv.style.borderColor = 'darkgray';
+                });
+            }
+        });
     </script>
 </body>
 

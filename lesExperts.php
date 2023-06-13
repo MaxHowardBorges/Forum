@@ -13,7 +13,7 @@ if (isset($_SESSION['idAdministrateur']) && !empty($_SESSION['idAdministrateur']
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="/css/style.css" />
+  <link rel="stylesheet" href="/css/experts.css" />
   <title>
     Collège des experts - Association Forum de Grasse - Alpes maritimes
   </title>
@@ -43,7 +43,20 @@ if (isset($_SESSION['idAdministrateur']) && !empty($_SESSION['idAdministrateur']
       </div>
     </nav>
   </header>
-  <main></main>
+  <div id="diapo"></div>
+  <main>
+
+
+      <div class="equipe">
+          <div class="expert"> <div class="photo"><img src="assets/img/avatar.jpg"> </div> <div class="txtexpert"><h1>John John</h1> <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce facilisis tortor non odio mattis fringilla. Integer ac dapibus tellus. Etiam sed ipsum eget magna molestie suscipit.</p></div> </div>
+          <div class="expert"> <div class="photo"><img src="assets/img/avatar.jpg"> </div> <div class="txtexpert"><h1>John John</h1> <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce facilisis tortor non odio mattis fringilla. Integer ac dapibus tellus. Etiam sed ipsum eget magna molestie suscipit.</p></div> </div>
+          <div class="expert"> <div class="photo"><img src="assets/img/avatar.jpg"> </div> <div class="txtexpert"><h1>John John</h1> <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce facilisis tortor non odio mattis fringilla. Integer ac dapibus tellus. Etiam sed ipsum eget magna molestie suscipit.</p></div> </div>
+          <div class="expert"> <div class="photo"><img src="assets/img/avatar.jpg"> </div> <div class="txtexpert"><h1>John John</h1> <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce facilisis tortor non odio mattis fringilla. Integer ac dapibus tellus. Etiam sed ipsum eget magna molestie suscipit.</p></div> </div>
+          <div class="expert"> <div class="photo"><img src="assets/img/avatar.jpg"> </div> <div class="txtexpert"><h1>John John</h1> <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce facilisis tortor non odio mattis fringilla. Integer ac dapibus tellus. Etiam sed ipsum eget magna molestie suscipit.</p></div> </div>
+          <div class="expert"> <div class="photo"><img src="assets/img/avatar.jpg"> </div> <div class="txtexpert"><h1>John John</h1> <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce facilisis tortor non odio mattis fringilla. Integer ac dapibus tellus. Etiam sed ipsum eget magna molestie suscipit.</p></div> </div>
+      </div>
+
+  </main>
   <footer>
     <div class="bottomnav">
       <div class="left"></div>

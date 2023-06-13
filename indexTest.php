@@ -42,6 +42,13 @@ if (isset($_SESSION['idAdministrateur']) && !empty($_SESSION['idAdministrateur']
         </nav>
     </header>
     <div id="diapo"></div>
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <span class="close">&times;</span>
+            <h3 id="popup-title"></h3>
+            <p id="popup-description"></p>
+        </div>
+    </div>
     <main>
         <div id="news">
             <div class="card">
@@ -85,9 +92,16 @@ if (isset($_SESSION['idAdministrateur']) && !empty($_SESSION['idAdministrateur']
                 $cpt = 1;
                 while ($row = mysqli_fetch_assoc($query)) {
                     $titre = $row['titre'];
-                    $description = $row['description'];
+                    $titre = htmlspecialchars($titre, ENT_QUOTES, 'UTF-8');
+                    $description =  preg_replace('/(<br\s*\/?>\s*){2,}/i', "<br>", nl2br($row['description']));
+                    $description = htmlspecialchars($description, ENT_QUOTES, 'UTF-8');
+                    $button = '';
                     if (strlen($description) > 300) {
-                        $descriptionCourt = substr($description, 0, 300);
+                        $description = substr($description, 0, 300);
+                        while ($description[-1] != ' ') {
+                            $description = substr($description, 0, -1);
+                        }
+                        $button = '<button class="en-savoir-plus" data-title="' . $titre . '" data-description="' . htmlspecialchars(nl2br($row['description']), ENT_QUOTES, 'UTF-8') . '">En savoir plus</button>';
                     }
                     echo '<div class="inner_part">';
                     echo '<label for="slideImg" class="img">';
@@ -96,9 +110,9 @@ if (isset($_SESSION['idAdministrateur']) && !empty($_SESSION['idAdministrateur']
                     echo '<div class="content content_' . $cpt . '">';
                     echo '<div class="title">' . $titre . '</div>';
                     echo '<div class="text">';
-                    echo $descriptionCourt;
+                    echo $description;
                     echo '</div>';
-                    echo '<button>Read More</button>';
+                    echo $button;
                     echo '</div>';
                     echo '</div>';
                     echo '<style>';
@@ -224,6 +238,28 @@ if (isset($_SESSION['idAdministrateur']) && !empty($_SESSION['idAdministrateur']
             }
 
             window.addEventListener("scroll", reveal);
+            document.addEventListener("DOMContentLoaded", function() {
+                var buttons = document.querySelectorAll(".en-savoir-plus");
+
+                buttons.forEach(function(button) {
+                    button.addEventListener("click", function(event) {
+                        event.preventDefault();
+                        var title = this.dataset.title;
+                        var description = this.dataset.description;
+
+                        document.getElementById("popup-title").innerHTML = title;
+                        document.getElementById("popup-description").innerHTML = description;
+
+                        document.getElementById("popup").style.display = "block";
+                    });
+                });
+
+                var closeBtn = document.querySelector(".close");
+
+                closeBtn.addEventListener("click", function() {
+                    document.getElementById("popup").style.display = "none";
+                });
+            });
         </script>
     </main>
     <footer>

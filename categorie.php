@@ -9,7 +9,7 @@
     $categorie = $_GET['categorie'];
     echo '<title>' . $categorie . ' - Association Forum de Grasse - Alpes maritimes</title>'
     ?>
-    <link rel="stylesheet" href="/css/annuaireTest.css" />
+    <link rel="stylesheet" href="/css/annuaire.css" />
 </head>
 
 <body>
@@ -45,8 +45,9 @@
         $query = mysqli_query($db, "SELECT * FROM association WHERE categorie='$categorie';");
         while ($row = mysqli_fetch_assoc($query)) {
             $nom = $row['nom'];
-            echo '<a href="association.php?association=' . $nom . '">' . $nom . '</a>';
-            echo '<p>Themes : ' . $row['themes'] . '</p>';
+            echo '<div class="asso">';
+            echo '<a href="association.php?association=' . $nom . '">' . $nom . '<p>Themes : ' . $row['themes'] . ' </p> </a>';
+            echo '</div>';
         }
         ?>
     </main>

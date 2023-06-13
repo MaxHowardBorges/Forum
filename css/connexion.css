@@ -82,7 +82,7 @@ footer .center {
     display: block;
 }
 
-. dropdown:hover .dropdown-content {
+.dropdown:hover .dropdown-content {
     display: block;
     animation: 1s forwards;
 }

@@ -118,6 +118,7 @@ footer .center {
   animation: fondu 13.5s ease infinite 0s;
   background-size: cover;
   background-repeat: no-repeat;
+  margin-bottom: 75px;
 }
 
 @keyframes fondu {
@@ -479,5 +480,5 @@ news{
 }
 
 .boutonbeau:hover {
-  background-color: var(--hover-color);
+    background-color: var(--hover-color);
 }

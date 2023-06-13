@@ -1,8 +1,8 @@
 <?php
 require_once "dbConnect.php";
 $db = createDbConnection();
-$titre = $_POST['titre'];
-$description = $_POST['message'];
+$titre = mysqli_real_escape_string($db, $_POST['titre']);
+$description = mysqli_real_escape_string($db, $_POST['message']);
 $dateDebut = $_POST['dateDebut'];
 $heureDebut = $_POST['heureDebut'];
 $dateFin = $_POST['dateFin'];
