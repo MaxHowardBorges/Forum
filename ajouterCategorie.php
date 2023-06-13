@@ -1,7 +1,7 @@
 <?php
 require_once "dbConnect.php";
 $db = createDbConnection();
-$nom = $_POST['nomInput'];
+$nom = mysqli_real_escape_string($db, $_POST['nomInput']);
 // $image = $_FILES['imageInput']['name'];
 $couleur = $_POST['couleurInput'];
 $couleur2 = $_POST['couleurInput2'];
